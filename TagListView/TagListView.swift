@@ -30,7 +30,7 @@ open class TagListView: UIView {
                 $0.selectedTextColor = selectedTextColor
             }
         }
-    }x
+    }
 
     @IBInspectable open dynamic var tagLineBreakMode: NSLineBreakMode = .byTruncatingMiddle {
         didSet {
