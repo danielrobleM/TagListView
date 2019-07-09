@@ -30,7 +30,7 @@ open class TagListView: UIView {
                 $0.selectedTextColor = selectedTextColor
             }
         }
-    }
+    }x
 
     @IBInspectable open dynamic var tagLineBreakMode: NSLineBreakMode = .byTruncatingMiddle {
         didSet {
@@ -64,10 +64,10 @@ open class TagListView: UIView {
         }
     }
     
-    @IBInspectable open dynamic var cornerRadius: CGFloat = 0 {
+    @IBInspectable open dynamic var tagViewListCornerRadius: CGFloat = 0 {
         didSet {
             tagViews.forEach {
-                $0.tagViewCornerRadius = cornerRadius
+                $0.tagViewCornerRadius = tagViewListCornerRadius
             }
         }
     }
@@ -256,7 +256,7 @@ open class TagListView: UIView {
             tagBackgroundView.frame.origin = CGPoint(x: currentRowWidth, y: 0)
             tagBackgroundView.frame.size = tagView.bounds.size
             tagBackgroundView.layer.shadowColor = shadowColor.cgColor
-            tagBackgroundView.layer.shadowPath = UIBezierPath(roundedRect: tagBackgroundView.bounds, cornerRadius: cornerRadius).cgPath
+            tagBackgroundView.layer.shadowPath = UIBezierPath(roundedRect: tagBackgroundView.bounds, cornerRadius: tagViewListCornerRadius).cgPath
             tagBackgroundView.layer.shadowOffset = shadowOffset
             tagBackgroundView.layer.shadowOpacity = shadowOpacity
             tagBackgroundView.layer.shadowRadius = shadowRadius
@@ -301,7 +301,7 @@ open class TagListView: UIView {
         tagView.highlightedBackgroundColor = tagHighlightedBackgroundColor
         tagView.selectedBackgroundColor = tagSelectedBackgroundColor
         tagView.titleLineBreakMode = tagLineBreakMode
-        tagView.tagViewCornerRadius = cornerRadius
+        tagView.tagViewCornerRadius = tagViewListCornerRadius
         tagView.borderWidth = borderWidth
         tagView.borderColor = borderColor
         tagView.selectedBorderColor = selectedBorderColor
